@@ -1,0 +1,21 @@
+application: corrinablacksite
+version: 1
+runtime: python27
+threadsafe: true
+api_version: 1
+
+handlers:
+- url: /(.+)
+  static_files: app/\1
+  upload: app/.*
+
+#-------------------------------------------------------------------------------
+#- POINT TO STATER HTML FILE AS STATIC FILE OR IN MAIN.PY ----------------------
+#-------------------------------------------------------------------------------
+#- url: /
+#  static_files: app/index_1.html
+#  upload: app/index_1.html
+
+- url: /
+  script: main.application
+#-------------------------------------------------------------------------------
